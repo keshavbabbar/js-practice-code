@@ -22,23 +22,34 @@
         <button onclick="
         playGame('scissors');
     ">Scissor</button>
+    
+        <p class="js-   result"></p>
+        <p class="js-score"></p>
 
         <button onclick="
-    score.Wins = 0;
-    score.Losses = 0;
-    score.Ties = 0;
-    ">Reset score</button>
+            score.Wins = 0;
+            score.Losses = 0;
+            score.Ties = 0;
+            localStorage.setItem('score', JSON.stringify(score));
+            updateScore(); 
+       ">Reset score</button>
     </div>
     <script>
 
-        let score = JSON.parse(localStorage.getItem('score'))  
-      
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            Wins: 0,
+            Losses: 0,
+            Ties: 0
+        };
+
+        updateScore();
+
         function playGame(playermove) {
             const computerMove = computerGame();
             let result = '';
             if (playermove === 'scissors') {
                 if (computerMove === 'rock') {
-                    result = 'You loss';
+                    result = 'You lose';
                 }
                 else if (computerMove === 'scissors') {
                     result = 'Tie';
@@ -53,7 +64,7 @@
                     result = 'You win';
                 }
                 else if (computerMove === 'scissors') {
-                    result = 'You loss';
+                    result = 'You lose';
                 }
                 else if (computerMove === 'paper') {
                     result = 'Tie';
@@ -74,15 +85,23 @@
             if (result === 'You win') {
                 score.Wins += 1;
             }
-            else if (result === 'You loss') {
+            else if (result === 'You lose') {
                 score.Losses += 1;
             }
             else if (result === 'Tie') {
                 score.Ties += 1;
             }
             localStorage.setItem('score', JSON.stringify(score))
+
+            updateScore();
+
             alert(`You pick ${playermove} computer pick ${computerMove}, ${result} this round!
-            Wins: ${score.Wins} Losses: ${score.Losses} Ties: ${score.Ties}`);
+            Wins: ${score.Wins}   Losses: ${score.Losses}   Ties: ${score.Ties}`);
+
+        }
+
+        function updateScore() {
+            document.querySelector(".js-score").innerHTML = `Wins: ${score.Wins}   Losses: ${score.Losses}   Ties: ${score.Ties}`;
 
         }
 
