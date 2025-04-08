@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #102a43;
+  text-align: center;
+  position: relative;
+  padding-bottom: 8px;
+}
+h2::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #3282b8;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Button Styling (applies to both .subs and all buttons) */
+.subs,
+button {
+  background: linear-gradient(90deg, #3282b8, #0f4c75);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  margin: 12px auto;
+}
+.subs:hover,
+button:hover {
+  background: linear-gradient(90deg, #0f4c75, #3282b8);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Anchor Styling */
+a {
+  color: #3282b8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: block;
+  margin: 12px auto;
+  text-align: center;
+}
+a:hover {
+  color: #0f4c75;
+  text-decoration: underline;
+}
+
+/* Input Field for Calculator */
+.js-cost-input {
+  padding: 12px;
+  width: calc(100% - 40px);
+  max-width: 300px;
+  border: 2px solid #cad2d8;
+  border-radius: 8px;
+  margin: 12px auto;
+  display: block;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+.js-cost-input:focus {
+  outline: none;
+  border: 2px solid #3282b8;
+}
+
+/* Total Cost Display */
+.js-total-cost {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 16px;
+  color: #102a43;
+}
+
+/* Section/Card Styling */
+section {
+  background: #ffffff;
+  padding: 32px 16px;
+  margin: 24px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional spacing for elements (optional) */
+input, button, .subs, a {
+  margin-bottom: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .js-cost-input {
+    width: 100%;
+  }
+
+  .subs,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
