@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>Subscribe my channel</h2>
+    <button type="button" class="btn btn-danger subs" onclick="
+    Subscribe();
+    ">Subscribe</button>
+
+    <h2>Rock-paper-scissors Game</h2>
+    <a href="../Rock paper scissor/index.html" target="_blank">Click here</a>
+
+
+    <h2>Amazon shippping calculator<h2>
+            <input type="number" placeholder="Cost of order" class="js-cost-input"  onkeydown="handelCost(event)">
+
+
+            <button onclick="calculateTotal();">Calculate</button>
+            <p class="js-total-cost"></p>
+            <script>
+
+        function handelCost(event){
+            if (event.key === 'Enter'){
+                calculateTotal();
+                }
+        }
+
+
+                function calculateTotal() {
+                    let inputElement = document.querySelector('.js-cost-input');
+                    let cost = Number(inputElement.value);
+                    if (cost < 40) {
+                        cost += 10;
+                    }
+
+                    document.querySelector('.js-total-cost').innerHTML = `$${cost}`
+                }
+
+                function Subscribe() {
+                    let changeButton = document.querySelector('.subs');
+                    if (changeButton.innerText === 'Subscribe') {
+                        changeButton.innerText = 'Subscribed';
+
+                    }
+                    else {
+                        changeButton.innerText = 'Subscribe';
+                    }
+                }
+
+            </script>
+</body>
+
+</html>
