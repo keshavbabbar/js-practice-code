@@ -166,7 +166,7 @@
     //  }
     //  console.log(indix)
 
-    
+
 
     //  function findIndex(array,word)
     //  {
@@ -187,6 +187,28 @@
     // console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'red'))
     // console.log(findIndex(['green', 'blue', 'red', 'yellow'], 'black'))
     
+
+
+    function removeEgg(foods)
+    {
+        let result = [];
+        let eggCount = '0';
+
+        for(let i = 0; i < foods.length; i++)
+        {
+           if(foods[i] === 'egg' && eggCount < 2)
+           {
+            eggCount++;
+            continue;
+           }
+    
+          result.push(foods[i]);
+      
+        }
+       return result;
+    }
+
+    console.log(removeEgg(['egg', 'banana', 'apple', 'egg', 'egg', 'apple', 'egg']))
     </script>
 </body>
 </html>
