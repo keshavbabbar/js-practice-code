@@ -4,9 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>App</title>
 </head>
 <body>
+    <button class="click" onclick="clickCall()">Add to Cart</button>
+    <p class="js-item-added"></p>
+
+
+    <script>
+
     
+
+
+        function clickCall()
+        {
+           let cl = document.querySelector('.js-item-added');
+           cl.innerHTML = 'Added'
+
+       CloseEvent(timeclear)    
+
+       timeclear = setTimeout(() => {
+            cl.innerHTML = ''
+        }, 2000);
+        }
+    </script>
 </body>
 </html>

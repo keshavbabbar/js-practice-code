@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+      <button class="ad" onclick="newMessage('add');">Add</button>    
+      <button class="remv" onclick="newMessage('remove');">Remove</button>    
+
+
+    <script>
+        let message = 0
+        let intervalId;
+
+        function startCall()
+        {
+            intervalId = setInterval(function()
+             {
+                if (document.title === 'App')
+                {
+                    document.title = ` (${message}) New message`
+                }  
+                else
+                {
+                    document.title = 'App'
+                }
+             }, 1000)
+        }    
+       
+       
+    
+
+        function newMessage(action) 
+        {
+          if (action === 'add') 
+          {
+             message++;
+             if (message === 1) 
+             {
+                startCall();
+             }
+          } 
+          else if (action === 'remove')
+          {
+             message--;
+             if (message <= 0)
+             {
+                message = 0;
+                clearInterval(intervalId);
+                intervalId = null;
+                document.title = 'App';
+             }
+          }
+        }
+   
+   
+    </script>
+</body>
+</html>
