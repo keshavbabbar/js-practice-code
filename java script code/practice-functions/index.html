@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice function</title>
+    <button class="click" onclick="clickCall();">Finish</button>
+</head>
+<body>
+    <script>
+        // let vowel = str=>
+        // {
+        //     let count = 0;
+
+        //     for(let i = 0; i < str.length; i++)
+        //     {
+        //        let vl = str[i];
+
+        //        if(vl === 'a' || vl === 'e' || vl === 'i' || vl === 'o' || vl === 'u')
+        //        {
+        //         count++
+        //        }
+        //     }
+        //  return count;
+        // }
+        // console.log(vowel('keshav'))
+     
+
+
+        //  let arr = ['keshav', 'babbar', 'name']    
+
+        // for( i = 0; i < arr.length; i++)
+        // {
+          
+        // console.log(arr[i].toUpperCase())
+
+        // }
+
+
+        // let arr = [1, 2, 3, 4];
+
+        // arr.forEach ((val ) => 
+        // {
+        //   let a = Math.pow(val,2)
+        //   console.log(a)
+        // })
+
+
+        // let add = function()
+        //           {
+        //             console.log(2 + 3)
+        //           }
+        //           add()
+
+
+
+        //     function runTwice(fun)
+        //     {
+        //         fun();
+        //         fun();
+        //     }
+
+        //       runTwice(function()
+        //             {
+        //             console.log('12b');
+        //             }) 
+        //             runTwice(add);
+
+        function clickCall(){
+       
+     let cl = document.querySelector('.click')
+       cl.innerHTML = 'Loading'
+
+        setTimeout(() => {
+        cl.innerHTML = 'Finished'
+        }, 1000);
+        } 
+    </script>
+</body>
+</html>
