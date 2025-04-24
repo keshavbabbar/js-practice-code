@@ -12,4 +12,4 @@ if(bmi < 18.5){
 return result;
 }
 
-console.log(bmiCalculator(55,1.707))
+console.log(bmiCalculator(60,1.705))
