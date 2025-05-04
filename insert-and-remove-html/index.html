@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">hy i am keshav</div>
+        <div class="box">hy i am box</div>
+    </div>
+
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "Hy i am inserted by the keshav babbar";
+        div.setAttribute("class", "created");
+        document.querySelector(".container").append(div)
+    </script>
+</body>
+</html>
